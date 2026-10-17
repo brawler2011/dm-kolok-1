@@ -15,9 +15,11 @@
 \markboth{Обозначения и соглашения}{}
 \addcontentsline{toc}{section}{Обозначения и соглашения}
 \begingroup
-\small
-\setlength{\parskip}{2pt}
+\setlength{\parskip}{4pt}
+\titlespacing*{\subsection}{0pt}{9pt}{4pt}
 \tcbset{before skip=4pt,after skip=4pt,top=4pt,bottom=4pt}
+\setlist[description]{font=\normalfont\bfseries,leftmargin=0pt,
+  labelindent=0pt,style=unboxed,itemsep=3pt,parsep=0pt}
 \input{notation.tex}
 \endgroup
 \ticket{Матрица смежности и её степени}
