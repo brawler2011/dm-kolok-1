@@ -34,7 +34,7 @@ jobs:
         run: latexmk main.tex
 
       - name: Upload PDF
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: notes-colored
           path: .build/notes-colored.pdf
@@ -44,7 +44,7 @@ jobs:
 
       - name: Upload build logs on failure
         if: failure()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: latex-logs
           path: .build/*.log
@@ -61,7 +61,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v8.0.2
         with:
           name: notes-colored
           path: dist
