@@ -1,0 +1,83 @@
+name: Build PDF
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pdf-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build PDF
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            latexmk texlive-luatex texlive-lang-cyrillic \
+            texlive-latex-extra texlive-fonts-recommended
+
+      - name: Compile PDF
+        run: latexmk main.tex
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: notes-colored
+          path: .build/notes-colored.pdf
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload build logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs
+          path: .build/*.log
+          include-hidden-files: true
+          if-no-files-found: ignore
+          retention-days: 7
+
+  publish:
+    name: Publish latest PDF
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: notes-colored
+          path: dist
+
+      - name: Update latest release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          notes="Автоматическая сборка из коммита ${GITHUB_SHA}."
+          if gh release view latest > /dev/null 2>&1; then
+            gh api --method PATCH "repos/${GH_REPO}/git/refs/tags/latest" \
+              -f sha="$GITHUB_SHA" -F force=true
+            gh release edit latest --title 'Конспект — актуальная версия' --notes "$notes" --latest
+          else
+            gh release create latest --target "$GITHUB_SHA" \
+              --title 'Конспект — актуальная версия' --notes "$notes" --latest
+          fi
+          gh release upload latest dist/notes-colored.pdf --clobber
