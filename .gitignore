@@ -1,4 +1,5 @@
 .build/
+/notes-colored.pdf
 .agents/
 .aws/
 .codex/
