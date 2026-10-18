@@ -1,0 +1,27 @@
+\begin{graphillustration}{Вставка $x$ заменяет одну дугу двумя. На схеме цикла показан пример с тремя исходными вершинами; на пути возможна также вставка на конце.}{fig:12-insert}
+\begin{tikzpicture}[font=\small]
+\begin{scope}[shift={(0,0)}]
+\node[gi vertex] (p) at (0,0) {$v_{j-1}$};
+\node[gi vertex] (q) at (3.5,0) {$v_j$};
+\node[gi selected] (x) at (1.75,1.3) {$x$};
+\draw[gi removed,-{Stealth}] (p) -- (q);
+\draw[gi arrow] (p) -- (x);
+\draw[gi arrow] (x) -- (q);
+\node[gi note] at (-0.7,0) {$\cdots$};
+\node[gi note] at (4.2,0) {$\cdots$};
+\node[gi note] at (1.75,-1.9) {Вставка внутри пути};
+\end{scope}
+\begin{scope}[shift={(6.5,0)}]
+\node[gi vertex] (p) at (0,0) {$v_i$};
+\node[gi vertex] (q) at (3.5,0) {$v_{i+1}$};
+\node[gi selected] (x) at (1.75,1.3) {$x$};
+\draw[gi removed,-{Stealth}] (p) -- (q);
+\draw[gi arrow] (p) -- (x);
+\draw[gi arrow] (x) -- (q);
+\node[gi vertex] (w) at (1.75,-1.1) {$w$};
+\draw[gi arrow] (q) -- (w);
+\draw[gi arrow] (w) -- (p);
+\node[gi note] at (1.75,-1.9) {Вставка в цикл};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

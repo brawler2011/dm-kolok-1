@@ -1,0 +1,11 @@
+\begin{graphillustration}{Пример: граф $P_3$ и его матрица в порядке $v_1,v_2,v_3$.}{fig:01-adjacency}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (v1) at (0,0) {$v_1$};
+\node[gi vertex] (v2) at (1.5,1) {$v_2$};
+\node[gi vertex] (v3) at (3,0) {$v_3$};
+\draw[gi edge] (v1) -- (v2);
+\draw[gi edge] (v2) -- (v3);
+\node[gi note] at (6,0) {$A=\begin{pmatrix}0&1&0\\1&0&1\\0&1&0\end{pmatrix}$};
+\node[gi note] at (6,-1.25) {Строка $i$ — соседи $v_i$};
+\end{tikzpicture}
+\end{graphillustration}

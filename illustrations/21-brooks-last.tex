@@ -1,0 +1,15 @@
+\begin{graphillustration}{Схема последнего шага Брукса при $d=4$: показана только окрестность $b$. Цифры — цвета; несмежные $a,c$ заранее получили одинаковый цвет.}{fig:21-brooks-last}
+\begin{tikzpicture}[font=\small]
+\node[gi selected,label=above:{$a$}] (a) at (0,0) {$1$};
+\node[gi selected,label=above:{$c$}] (c) at (3,0) {$1$};
+\node[gi vertex,label=above:{$p$}] (p) at (0.6,-1.5) {$2$};
+\node[gi vertex,label=above:{$q$}] (q) at (2.4,-1.5) {$3$};
+\node[gi vertex,label=above:{$b$}] (b) at (1.5,1.5) {$4$};
+\draw[gi edge] (b) -- (a);
+\draw[gi edge] (b) -- (c);
+\draw[gi edge] (b) -- (p);
+\draw[gi edge] (b) -- (q);
+\node[gi note] at (7,0.7) {Сначала $a,c$: общий цвет $1$.\\Остальные вершины — снизу вверх.\\Последней красим $b$.};
+\node[gi note] at (7,-0.9) {$d=4$: соседи используют лишь $1,2,3$.\\Для $b$ свободен цвет $4$.};
+\end{tikzpicture}
+\end{graphillustration}

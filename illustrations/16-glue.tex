@@ -1,0 +1,31 @@
+\begin{graphillustration}{Пример склейки двух укладок: диски касаются только в общей вершине $a$, их внутренности не пересекаются.}{fig:16-glue}
+\begin{tikzpicture}[font=\small]
+\draw[gi alternate] (0,0) circle (1.1);
+\node[gi vertex] (a1) at (1.1,0) {$a$};
+\node[gi vertex] (pa1) at (-0.4,0.55) {};
+\node[gi vertex] (qa1) at (-0.4,-0.55) {};
+\draw[gi edge] (a1) -- (pa1);
+\draw[gi edge] (pa1) -- (qa1);
+\draw[gi edge] (qa1) -- (a1);
+\draw[gi alternate] (3,0) circle (1.1);
+\node[gi vertex] (a2) at (1.9,0) {$a$};
+\node[gi vertex] (pa2) at (3.4,0.55) {};
+\node[gi vertex] (qa2) at (3.4,-0.55) {};
+\draw[gi edge] (a2) -- (pa2);
+\draw[gi edge] (pa2) -- (qa2);
+\draw[gi edge] (qa2) -- (a2);
+\node[gi note] at (4.9,0) {$\longrightarrow$};
+\draw[gi alternate] (7,0) circle (1.1);\draw[gi alternate] (9.2,0) circle (1.1);
+\node[gi selected] (a) at (8.1,0) {$a$};
+\node[gi vertex] (p) at (6.6,0.55) {};
+\node[gi vertex] (q) at (6.6,-0.55) {};
+\node[gi vertex] (r) at (9.6,0.55) {};
+\node[gi vertex] (s) at (9.6,-0.55) {};
+\draw[gi edge] (a) -- (p);
+\draw[gi edge] (p) -- (q);
+\draw[gi edge] (q) -- (a);
+\draw[gi edge] (a) -- (r);
+\draw[gi edge] (r) -- (s);
+\draw[gi edge] (s) -- (a);
+\end{tikzpicture}
+\end{graphillustration}

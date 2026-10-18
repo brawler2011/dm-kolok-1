@@ -1,0 +1,17 @@
+\begin{graphillustration}{Индексные множества в доказательстве Оре: $S\subset T$ в списке вершин по неубыванию степеней. Из смежности следует $d(x)\ge |T|-1$.}{fig:11-ore-sets}
+\begin{tikzpicture}[font=\small]
+\draw[gi group] (-.7,-.6) rectangle (7.3,.6);
+\draw[gi group] (-.5,-.4) rectangle (3.3,.4);
+\node[gi note] at (0.0,0) {$v_1$};
+\node[gi note] at (1.3,0) {$\cdots$};
+\node[gi note] at (2.6,0) {$v_i$};
+\node[gi note] at (3.9000000000000004,0) {$v_{i+1}$};
+\node[gi note] at (5.2,0) {$\cdots$};
+\node[gi note] at (6.5,0) {$v_{n-i}$};
+\node[gi note] at (7.800000000000001,0) {$\cdots$};
+\node[gi note] at (9.1,0) {$v_n$};
+\node[gi note] at (1.3,1) {$S$: первые $i$};
+\node[gi note] at (4,1.7) {$T$: первые $n-i$};
+\node[gi note] at (5,-1.3) {$x\in S,\ y\in T\setminus\{x\}$:\quad $d(x)+d(y)\le n-1$\\По условию Оре каждая такая пара смежна.};
+\end{tikzpicture}
+\end{graphillustration}

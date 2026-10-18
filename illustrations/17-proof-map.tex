@@ -1,0 +1,15 @@
+\begin{graphillustration}{Логика достаточности с отсылками к разделам билета. Геометрический перебор в §\,5 дан только в виде схемы, как оговорено в тексте.}{fig:17-proof-map}
+\begin{tikzpicture}[font=\small]
+\node[gi box,text width=9cm] (min) at (0,0) {\hyperlink{pk:step2}{\S\,2}: минимальный контрпример $G$};
+\node[gi box,text width=9cm] (conn) at (0,-1.1) {\hyperlink{pk:step2}{\S\,2}: нет разделителей из одной или двух вершин};
+\node[gi box,text width=9cm] (parts) at (0,-2.2) {\hyperlink{pk:step3}{\S\,3}: $G-uv$ плоский; цикл $C$ и его части};
+\node[gi box,text width=9cm] (geo) at (0,-3.3) {\hyperlink{pk:step4}{\S\,4}--\hyperlink{pk:step5}{5}: конфликты и геометрическая редукция (схема)};
+\draw[gi flow] (min) -- (conn);
+\draw[gi flow] (conn) -- (parts);
+\draw[gi flow] (parts) -- (geo);
+\node[gi box,text width=4.7cm] (yes) at (-3,-4.8) {Ребро $uv$ возвращено\\$G$ планарен: противоречие};
+\node[gi box,text width=4.7cm] (no) at (3,-4.8) {\hyperlink{pk:step6}{\S\,6}: подразбиение $K_5$ или $K_{3,3}$\\Запрет нарушен: противоречие};
+\draw[gi flow] (geo) -- (yes);
+\draw[gi flow] (geo) -- (no);
+\end{tikzpicture}
+\end{graphillustration}

@@ -1,0 +1,13 @@
+\begin{graphillustration}{Пример открытого обхода: нечётные $s,t$ становятся чётными после добавления $st$. Для орграфа добавляют именно дугу $t\to s$.}{fig:09-auxiliary}
+\begin{tikzpicture}[font=\small]
+\node[gi selected] (s) at (0,0) {$s$};
+\node[gi vertex] (x) at (1.5,1) {$x$};
+\node[gi selected] (t) at (3,0) {$t$};
+\draw[gi edge] (s) -- (x);
+\draw[gi edge] (x) -- (t);
+\draw[gi alternate] (t) to[bend left=20] (s);
+\node[gi note] at (1.5,-1) {Вспомогательное $st$};
+\node[gi note] at (4.5,0) {$\longrightarrow$};
+\node[gi note] at (8,0) {$s,x,t,s\quad\longmapsto\quad s,x,t$\\[5pt]Разрез по вспомогательному ребру};
+\end{tikzpicture}
+\end{graphillustration}

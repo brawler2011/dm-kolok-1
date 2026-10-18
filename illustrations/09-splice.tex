@@ -1,0 +1,33 @@
+\begin{graphillustration}{Пример склейки: после возвращения в $x$ обход $C$ продолжается обходом $D$. Стрелки показывают порядок прохождения неориентированных рёбер.}{fig:09-splice}
+\begin{tikzpicture}[font=\small]
+\node[gi selected] (x) at (0,0) {$x$};
+\node[gi vertex] (a) at (-1,1) {$a$};
+\node[gi vertex] (b) at (-1,-1) {$b$};
+\node[gi vertex] (c) at (1,1) {$c$};
+\node[gi vertex] (d) at (1,-1) {$d$};
+\draw[gi edge] (x) -- (a);
+\draw[gi edge] (a) -- (b);
+\draw[gi edge] (b) -- (x);
+\draw[gi alternate] (x) -- (c);
+\draw[gi alternate] (c) -- (d);
+\draw[gi alternate] (d) -- (x);
+\node[gi note] at (-0.8,1.6) {$C$};
+\node[gi note] at (0.8,1.6) {$D$};
+\node[gi note] at (2.6,0) {$\longrightarrow$};
+\begin{scope}[shift={(5.2,0)}]
+\node[gi selected] (x) at (0,0) {$x$};
+\node[gi vertex] (a) at (-1,1) {$a$};
+\node[gi vertex] (b) at (-1,-1) {$b$};
+\node[gi vertex] (c) at (1,1) {$c$};
+\node[gi vertex] (d) at (1,-1) {$d$};
+\draw[gi arrow] (x) -- (a);
+\draw[gi arrow] (a) -- (b);
+\draw[gi arrow] (b) -- (x);
+\draw[gi arrow] (x) -- (c);
+\draw[gi arrow] (c) -- (d);
+\draw[gi arrow] (d) -- (x);
+\node[gi note] at (0,-1.8) {$x,a,b,\boxed{x,c,d,x}$};
+\end{scope}
+\node[gi note] at (8.7,0) {В точке $x$\\вставляем обход $D$.};
+\end{tikzpicture}
+\end{graphillustration}

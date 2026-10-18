@@ -1,0 +1,24 @@
+\begin{graphillustration}{Два класса раскрасок $G-e$: показано по одному примеру. Цифры — цвета; равенство цветов концов удалённого ребра соответствует стягиванию.}{fig:18-color-classes}
+\begin{tikzpicture}[font=\small]
+\begin{scope}[shift={(0,0)}]
+\node[gi selected,label=left:$u$] (u) at (0,1.6) {1};
+\node[gi selected,label=left:$v$] (v) at (0,0) {2};
+\node[gi vertex,label=right:$a$] (a) at (1.6,0) {1};
+\node[gi vertex,label=right:$b$] (b) at (1.6,1.6) {2};
+\draw[gi edge] (v) -- (a);
+\draw[gi edge] (a) -- (b);
+\draw[gi edge] (b) -- (u);
+\node[gi note] at (0.8,-0.9) {$\varphi(u)\ne\varphi(v)$: раскраски $G$};
+\end{scope}
+\begin{scope}[shift={(6,0)}]
+\node[gi selected,label=left:$u$] (u) at (0,1.6) {1};
+\node[gi selected,label=left:$v$] (v) at (0,0) {1};
+\node[gi vertex,label=right:$a$] (a) at (1.6,0) {3};
+\node[gi vertex,label=right:$b$] (b) at (1.6,1.6) {2};
+\draw[gi edge] (v) -- (a);
+\draw[gi edge] (a) -- (b);
+\draw[gi edge] (b) -- (u);
+\node[gi note] at (0.8,-0.9) {$\varphi(u)=\varphi(v)$: раскраски $G/e$};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

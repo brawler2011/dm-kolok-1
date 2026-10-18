@@ -1,0 +1,40 @@
+\begin{graphillustration}{Два случая в доказательстве транзитивности теоремы 4.1. Жирная сплошная и штриховая линии выделяют полученные $uw$-пути $R_1,R_2$ без общих рёбер; тонкие серые линии — неиспользуемые участки. Показаны только начальные участки $Q_1,Q_2$ до первых встреч с $P_1\cup P_2$.}{fig:04-transitivity}
+\begin{tikzpicture}[font=\small]
+\begin{scope}
+  \node[gi note] at (2,2) {1. Точки встречи на разных путях};
+  \node[gi vertex] (u) at (0,0) {$u$};
+  \node[gi vertex] (v) at (4,0) {$v$};
+  \node[gi vertex] (a) at (2,1.1) {$a$};
+  \node[gi vertex] (b) at (2,-1.1) {$b$};
+  \node[gi vertex] (w) at (2,0) {$w$};
+  \draw[gi edge,black!45] (a)--(v);
+  \draw[gi edge,black!45] (b)--(v);
+  \draw[gi emphasis] (w)--(a)--(u);
+  \draw[gi alternate] (w)--(b)--(u);
+  \node[gi note] at (3.25,.9) {$P_1$};
+  \node[gi note] at (3.25,-.9) {$P_2$};
+  \node[gi note] at (2.45,.55) {$Q_1$};
+  \node[gi note] at (2.45,-.55) {$Q_2$};
+  \node[gi note] at (2,-2.9) {$R_1:w\xrightarrow{Q_1}a\xrightarrow{P_1}u$};
+  \node[gi note] at (2,-3.55) {$R_2:w\xrightarrow{Q_2}b\xrightarrow{P_2}u$};
+\end{scope}
+\begin{scope}[shift={(7.2,0)}]
+  \node[gi note] at (2,2) {2. Обе точки встречи на $P_1$};
+  \node[gi vertex] (u) at (0,0) {$u$};
+  \node[gi vertex] (v) at (4,0) {$v$};
+  \node[gi vertex] (a) at (1.3,-.8) {$a$};
+  \node[gi vertex] (b) at (2.7,-.8) {$b$};
+  \node[gi vertex] (w) at (2,-2.1) {$w$};
+  \draw[gi edge,black!45] (a)--(b);
+  \draw[gi emphasis] (w)--(a)--(u);
+  \draw[gi alternate] (w)--(b)--(v);
+  \draw[gi alternate] (v) to[bend right=35] (u);
+  \node[gi note] at (2,1.35) {$P_2$};
+  \node[gi note] at (2,-.4) {$P_1$};
+  \node[gi note] at (1.15,-1.6) {$Q_1$};
+  \node[gi note] at (2.85,-1.6) {$Q_2$};
+  \node[gi note] at (2,-2.9) {$R_1:w\xrightarrow{Q_1}a\xrightarrow{P_1}u$};
+  \node[gi note] at (2,-3.55) {$R_2:w\xrightarrow{Q_2}b\xrightarrow{P_1}v\xrightarrow{P_2}u$};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

@@ -1,0 +1,30 @@
+\begin{graphillustration}{Пример конфигурации в лемме Ловаса: два $K_4$ склеены в $z$; штриховые рёбра возвращают вершину $b$. Выбраны внутренние соседи $a,c$ разных крайних блоков.}{fig:21-lovasz-blocks}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (z) at (0,0) {$z$};
+\node[gi selected] (a) at (-2,-0.9) {$a$};
+\node[gi vertex] (p) at (-2,0.9) {};
+\node[gi vertex] (q) at (-1.2,0) {};
+\node[gi selected] (c) at (2,-0.9) {$c$};
+\node[gi vertex] (r) at (2,0.9) {};
+\node[gi vertex] (s) at (1.2,0) {};
+\node[gi vertex] (b) at (0,-2.2) {$b$};
+\draw[gi edge] (z) -- (a);
+\draw[gi edge] (z) -- (p);
+\draw[gi edge] (z) -- (q);
+\draw[gi edge] (a) -- (p);
+\draw[gi edge] (a) -- (q);
+\draw[gi edge] (p) -- (q);
+\draw[gi edge] (z) -- (c);
+\draw[gi edge] (z) -- (r);
+\draw[gi edge] (z) -- (s);
+\draw[gi edge] (c) -- (r);
+\draw[gi edge] (c) -- (s);
+\draw[gi edge] (r) -- (s);
+\draw[gi alternate] (b) -- (a);
+\draw[gi alternate] (b) -- (c);
+\draw[gi alternate] (b) -- (z);
+\node[gi note] at (-1.4,1.5) {$B_a$};
+\node[gi note] at (1.4,1.5) {$B_c$};
+\node[gi note] at (6,0) {В $G-b$ два крайних блока.\\Здесь $s_a=s_c=z$.\\[5pt]После удаления $a,c$\\оба блока остаются связными.};
+\end{tikzpicture}
+\end{graphillustration}

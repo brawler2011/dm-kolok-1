@@ -1,0 +1,16 @@
+\begin{graphillustration}{Шаг доказательства Камиона: внешним путём $v_i\to a\to b\to v_{i+1}$ заменяем дугу цикла. Схема показывает только используемые дуги турнира.}{fig:12-camion}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (vi) at (0,0) {$v_i$};
+\node[gi vertex] (vj) at (4.5,0) {$v_{i+1}$};
+\node[gi vertex] (w) at (2.25,-1.3) {$w$};
+\node[gi vertex] (a) at (1,1.5) {$a\in A$};
+\node[gi vertex] (b) at (3.5,1.5) {$b\in B$};
+\draw[gi arrow] (vi) -- (a);
+\draw[gi arrow] (a) -- (b);
+\draw[gi arrow] (b) -- (vj);
+\draw[gi arrow] (vj) -- (w);
+\draw[gi arrow] (w) -- (vi);
+\draw[gi removed,-{Stealth}] (vi) -- (vj);
+\node[gi note] at (7.7,0.5) {$C\to A,\quad A\ni a\to b\in B,\quad B\to C$\\[5pt]Цикл удлиняется на две вершины.};
+\end{tikzpicture}
+\end{graphillustration}

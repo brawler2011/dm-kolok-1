@@ -1,0 +1,36 @@
+\begin{graphillustration}{Лекционный пример удаления и стягивания одного ребра квадрата. Слева сохраняются четыре вершины, справа концы $u,v$ отождествлены.}{fig:18-delete-contract}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (u) at (0,1.6) {$u$};
+\node[gi vertex] (v) at (0,0) {$v$};
+\node[gi vertex] (a) at (1.6,0) {$a$};
+\node[gi vertex] (b) at (1.6,1.6) {$b$};
+\draw[gi edge] (v) -- (a);
+\draw[gi edge] (a) -- (b);
+\draw[gi edge] (b) -- (u);
+\draw[gi removed] (u) -- (v);
+\node[gi note] at (0.8,-0.8) {$G-e=P_4$};
+\node[gi note] at (3,0.8) {$\longleftarrow$};
+\begin{scope}[shift={(4.2,0)}]
+\node[gi vertex] (u) at (0,1.6) {$u$};
+\node[gi vertex] (v) at (0,0) {$v$};
+\node[gi vertex] (a) at (1.6,0) {$a$};
+\node[gi vertex] (b) at (1.6,1.6) {$b$};
+\draw[gi emphasis] (u) -- (v);
+\draw[gi edge] (v) -- (a);
+\draw[gi edge] (a) -- (b);
+\draw[gi edge] (b) -- (u);
+\node[gi note] at (0.8,-0.8) {$G=C_4$, $e=uv$};
+\end{scope}
+\node[gi note] at (7.2,0.8) {$\longrightarrow$};
+\begin{scope}[shift={(8.5,0)}]
+\node[gi selected] (w) at (0,0.8) {$u=v$};
+\node[gi vertex] (a) at (1.6,0) {$a$};
+\node[gi vertex] (b) at (1.6,1.6) {$b$};
+\draw[gi edge] (w) -- (a);
+\draw[gi edge] (a) -- (b);
+\draw[gi edge] (b) -- (w);
+\node[gi note] at (0.8,-0.8) {$G/e=C_3$};
+\end{scope}
+\node[gi note] at (5,-1.8) {$\chi_{C_4}=\chi_{P_4}-\chi_{C_3}$};
+\end{tikzpicture}
+\end{graphillustration}

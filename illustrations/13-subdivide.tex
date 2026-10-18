@@ -1,0 +1,16 @@
+\begin{graphillustration}{Подразделение ребра новой вершиной степени 2 не меняет укладку и число граней.}{fig:13-subdivide}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (u) at (0,0) {$u$};
+\node[gi vertex] (v) at (2,0) {$v$};
+\draw[gi edge] (u) -- (v);
+\node[gi note] at (3.5,0) {$\longleftrightarrow$};
+\begin{scope}[shift={(5,0)}]
+\node[gi vertex] (u) at (0,0) {$u$};
+\node[gi selected] (t) at (1.5,0) {$t$};
+\node[gi vertex] (v) at (3,0) {$v$};
+\draw[gi edge] (u) -- (t);
+\draw[gi edge] (t) -- (v);
+\end{scope}
+\node[gi note] at (4,-1) {$n\mapsto n+1,\qquad m\mapsto m+1,\qquad f\mapsto f$};
+\end{tikzpicture}
+\end{graphillustration}

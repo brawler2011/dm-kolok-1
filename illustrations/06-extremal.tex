@@ -1,0 +1,24 @@
+\begin{graphillustration}{Пример двух свойств дерева: добавление отсутствующего ребра создаёт цикл, удаление любого ребра разрывает связь.}{fig:06-extremal}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (u) at (0,0) {$u$};
+\node[gi vertex] (p) at (1,1) {$p$};
+\node[gi vertex] (v) at (2,0) {$v$};
+\node[gi vertex] (q) at (3,1) {$q$};
+\draw[gi edge] (u) -- (p);
+\draw[gi edge] (p) -- (v);
+\draw[gi edge] (v) -- (q);
+\draw[gi alternate] (u) to[bend right=30] (v);
+\node[gi note] at (1.5,-1.25) {$T+uv$: возникает цикл $u,p,v,u$};
+\node[gi note] at (4.8,0.2) {$\qquad$};
+\begin{scope}[shift={(7,0)}]
+\node[gi vertex] (u) at (0,0) {$u$};
+\node[gi vertex] (p) at (1,1) {$p$};
+\node[gi vertex] (v) at (2,0) {$v$};
+\node[gi vertex] (q) at (3,1) {$q$};
+\draw[gi edge] (u) -- (p);
+\draw[gi edge] (v) -- (q);
+\draw[gi removed] (p) -- (v);
+\node[gi note] at (1.5,-1.25) {$T-pv$: две компоненты};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

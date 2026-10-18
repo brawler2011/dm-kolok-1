@@ -1,0 +1,36 @@
+\begin{graphillustration}{Пример: удаление моста разделяет два треугольника. Пунктир отмечает удалённое ребро.}{fig:04-bridge}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (a) at (0,0) {$a$};
+\node[gi vertex] (p) at (-1,0.8) {$p$};
+\node[gi vertex] (q) at (-1,-0.8) {$q$};
+\node[gi vertex] (b) at (1.5,0) {$b$};
+\node[gi vertex] (r) at (2.5,0.8) {$r$};
+\node[gi vertex] (s) at (2.5,-0.8) {$s$};
+\draw[gi edge] (a) -- (p);
+\draw[gi edge] (p) -- (q);
+\draw[gi edge] (q) -- (a);
+\draw[gi edge] (b) -- (r);
+\draw[gi edge] (r) -- (s);
+\draw[gi edge] (s) -- (b);
+\draw[gi emphasis] (a) -- (b);
+\node[gi note] at (0.75,1.25) {$e=ab$ — мост};
+\node[gi note] at (0.75,-1.45) {$c(G)=1$};
+\node[gi note] at (4.3,0) {$\longrightarrow$};
+\begin{scope}[shift={(6.5,0)}]
+\node[gi vertex] (a) at (0,0) {$a$};
+\node[gi vertex] (p) at (-1,0.8) {$p$};
+\node[gi vertex] (q) at (-1,-0.8) {$q$};
+\node[gi vertex] (b) at (1.5,0) {$b$};
+\node[gi vertex] (r) at (2.5,0.8) {$r$};
+\node[gi vertex] (s) at (2.5,-0.8) {$s$};
+\draw[gi edge] (a) -- (p);
+\draw[gi edge] (p) -- (q);
+\draw[gi edge] (q) -- (a);
+\draw[gi edge] (b) -- (r);
+\draw[gi edge] (r) -- (s);
+\draw[gi edge] (s) -- (b);
+\draw[gi removed] (a) -- (b);
+\node[gi note] at (0.75,-1.45) {$c(G-e)=2$};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}
