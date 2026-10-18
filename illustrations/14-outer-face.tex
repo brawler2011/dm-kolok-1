@@ -1,0 +1,30 @@
+\begin{graphillustration}{Две плоские укладки одного $K_4$: внешними стали разные грани. Метки вершин сохраняют соответствие рёбер.}{fig:14-outer-face}
+\begin{tikzpicture}[font=\small]
+\begin{scope}[shift={(0,0)}]
+\node[gi vertex] (a) at (0,2) {$a$};
+\node[gi vertex] (b) at (-1.7,-1) {$b$};
+\node[gi vertex] (c) at (1.7,-1) {$c$};
+\node[gi vertex] (d) at (0,0) {$d$};
+\draw[gi edge] (a) -- (b);
+\draw[gi edge] (a) -- (c);
+\draw[gi edge] (a) -- (d);
+\draw[gi edge] (b) -- (c);
+\draw[gi edge] (b) -- (d);
+\draw[gi edge] (c) -- (d);
+\node[gi note] at (0,-1.8) {Внешняя грань: $abc$};
+\end{scope}
+\begin{scope}[shift={(6.3,0)}]
+\node[gi vertex] (a) at (0,2) {$a$};
+\node[gi vertex] (b) at (-1.7,-1) {$b$};
+\node[gi vertex] (d) at (1.7,-1) {$d$};
+\node[gi vertex] (c) at (0,0) {$c$};
+\draw[gi edge] (a) -- (b);
+\draw[gi edge] (a) -- (d);
+\draw[gi edge] (a) -- (c);
+\draw[gi edge] (b) -- (d);
+\draw[gi edge] (b) -- (c);
+\draw[gi edge] (d) -- (c);
+\node[gi note] at (0,-1.8) {Внешняя грань: $abd$};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

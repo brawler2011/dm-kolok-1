@@ -1,0 +1,32 @@
+\begin{graphillustration}{Примеры: удаление листа сохраняет дерево; лес может иметь изолированную вершину.}{fig:06-tree-forest}
+\begin{tikzpicture}[font=\small]
+\begin{scope}[shift={(1,0)}]
+\node[gi vertex] (r) at (0,0) {$r$};
+\node[gi vertex] (a) at (-1,-1) {$a$};
+\node[gi vertex] (b) at (1,-1) {$b$};
+\node[gi selected] (v) at (1.8,-2) {$v$};
+\draw[gi edge] (r) -- (a);
+\draw[gi edge] (r) -- (b);
+\draw[gi edge] (b) -- (v);
+\node[gi note] at (0,-2.7) {Дерево $T$, лист $v$};
+\end{scope}
+\node[gi note] at (4.3,-1) {$\longrightarrow$};
+\begin{scope}[shift={(6.6,0)}]
+\node[gi vertex] (r) at (0,0) {$r$};
+\node[gi vertex] (a) at (-1,-1) {$a$};
+\node[gi vertex] (b) at (1,-1) {$b$};
+\draw[gi edge] (r) -- (a);
+\draw[gi edge] (r) -- (b);
+\node[gi note] at (0,-2.7) {Дерево $T-v$};
+\end{scope}
+\begin{scope}[shift={(10.5,0)}]
+\node[gi vertex] (a) at (0,0) {$a$};
+\node[gi vertex] (b) at (1,-1) {$b$};
+\node[gi vertex] (c) at (2,0) {$c$};
+\node[gi vertex] (d) at (2,-1.8) {$d$};
+\draw[gi edge] (a) -- (b);
+\draw[gi edge] (b) -- (c);
+\node[gi note] at (1,-2.7) {Лес: $c=2$};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

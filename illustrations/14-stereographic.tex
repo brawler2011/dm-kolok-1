@@ -1,0 +1,12 @@
+\begin{graphillustration}{Стереографическая проекция на экваториальную плоскость $z=0$: показано сечение через $N$, $P$ и центр сферы. Полюс $N$ не имеет конечного образа.}{fig:14-stereographic}
+\begin{tikzpicture}[font=\small]
+\draw[gi edge] (0,0) circle (1.5);
+\draw[gi alternate] (-2.1,0)--(4,0) node[right] {$z=0$};
+\node[gi small,label=above:{$N=(0,0,1)$}] (N) at (0,1.5) {};
+\node[gi small,label=above right:{$P=(x,y,z)$}] (P) at (1.2,0.9) {};
+\node[gi small,label=below right:{$\pi(P)$}] (Q) at (3,0) {};
+\draw[gi emphasis] (N) -- (Q);
+\node[gi note] at (0,-0.45) {$O$};
+\node[gi note] at (6.9,0.5) {$N,\ P,\ \pi(P)$ лежат на одной прямой\\[5pt]$\displaystyle\pi(P)=\left(\frac{x}{1-z},\frac{y}{1-z}\right)$};
+\end{tikzpicture}
+\end{graphillustration}

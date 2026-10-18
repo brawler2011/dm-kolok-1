@@ -50,16 +50,7 @@ d_h(H)\le h,\qquad d_{n-h}(H)\le n-h-1,
 а все остальные степени не больше \(n-2\). Тогда
 \(d_1(H)=0\le1\), \(d_{n-1}(H)\le n-2\), снова противоречие при \(i=1<n/2\).
 \end{proof}
-\begin{center}
-\begin{tikzpicture}[>=Stealth,scale=.9,every node/.style={circle,fill=cbBlue,inner sep=2pt}]
-\foreach \x/\name in {0/u,1.1/a,2.2/b,3.3/c,4.4/d,5.5/v}{\node (\name) at (\x,0) {};}
-\draw (u)--(a)--(b)--(c)--(d)--(v);
-\draw[cbOrange,thick] (u) to[bend left=35] (c);
-\draw[cbGreen,thick] (b) to[bend right=35] (v);
-\node[fill=none,below] at (u) {$u=x_1$};\node[fill=none,below] at (b) {$x_i$};
-\node[fill=none,below] at (c) {$x_{i+1}$};\node[fill=none,below] at (v) {$v=x_n$};
-\end{tikzpicture}
-\end{center}
+\input{illustrations/10-hamilton-rewire.tex}
 Два выделенных ребра при \(i\in S\cap T\) замыкают путь в гамильтонов цикл.
 
 \textbf{Книжное дополнение для следующего билета.}
@@ -103,5 +94,7 @@ d_h(H)\le h,\qquad d_{n-h}(H)\le n-h-1,
 оставляет не более \(h\) непустых отрезков, значит, в гамильтоновом графе
 компонент после такого удаления не больше \(h\). Противоречие.
 \end{proof}
+\input{illustrations/10-chvatal-example.tex}
+
 Критерий достаточен для конкретного графа, но не необходим: например,
 цикл \(C_5\) гамильтонов, а при \(i=2\) его степени нарушают условие.

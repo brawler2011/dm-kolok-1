@@ -1,0 +1,12 @@
+\begin{graphillustration}{Каждый маршрут однозначно разбивается в $v_s$ на префикс длины $p$ и суффикс длины $q$; линии обозначают целые участки.}{fig:02-split}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (i) at (0,0) {$v_i$};
+\node[gi selected] (s) at (4,0) {$v_s$};
+\node[gi vertex] (j) at (8,0) {$v_j$};
+\draw[gi emphasis] (i) to[bend left=15] (s);
+\draw[gi alternate] (s) to[bend left=15] (j);
+\node[gi note] at (2,0.75) {$p$ рёбер};
+\node[gi note] at (6,0.75) {$q$ рёбер};
+\node[gi note] at (4,-0.8) {разрез после $p$-го ребра};
+\end{tikzpicture}
+\end{graphillustration}

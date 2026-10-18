@@ -1,0 +1,21 @@
+\begin{graphillustration}{Пример дерева: у корня $k$ цветов, у каждой другой вершины $k-1$ цветов, отличных от родительского. Удаление листа убирает один множитель $k-1$.}{fig:19-root-coloring}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex,label=above:{$k$ вариантов}] (r) at (1.5,2) {$r$};
+\node[gi vertex,label=left:{$k-1$}] (a) at (0,0.7) {$a$};
+\node[gi vertex,label=left:{$k-1$}] (b) at (3,0.7) {$b$};
+\node[gi selected,label=left:{$k-1$}] (v) at (3,-0.7) {$v$};
+\draw[gi edge] (r) -- (a);
+\draw[gi edge] (r) -- (b);
+\draw[gi edge] (b) -- (v);
+\node[gi note] at (1.5,-1.5) {$k(k-1)^3$};
+\node[gi note] at (4.7,0.6) {$\xrightarrow{\ -v\ }$};
+\begin{scope}[shift={(6.6,0)}]
+\node[gi vertex,label=above:{$k$ вариантов}] (r) at (1.5,2) {$r$};
+\node[gi vertex,label=left:{$k-1$}] (a) at (0,0.7) {$a$};
+\node[gi vertex,label=left:{$k-1$}] (b) at (3,0.7) {$b$};
+\draw[gi edge] (r) -- (a);
+\draw[gi edge] (r) -- (b);
+\node[gi note] at (1.5,-1.5) {$k(k-1)^2$};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

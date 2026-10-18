@@ -1,0 +1,16 @@
+\begin{graphillustration}{Пример обхода границ: мост $cv$ встречается на границе внешней грани дважды — по одной стороне в каждом направлении.}{fig:15-boundaries}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (a) at (0,0) {$a$};
+\node[gi vertex] (b) at (2,0) {$b$};
+\node[gi vertex] (c) at (1,1.7) {$c$};
+\node[gi vertex] (v) at (1,3) {$v$};
+\draw[gi edge] (a) -- (b);
+\draw[gi edge] (b) -- (c);
+\draw[gi edge] (c) -- (a);
+\draw[gi edge] (c) -- (v);
+\draw[gi flow] (.8,2)--(.8,2.65);\draw[gi flow] (1.2,2.65)--(1.2,2);
+\node[gi note] at (1,0.65) {$F_1$};
+\node[gi note] at (3,1.8) {$F_0$};
+\node[gi note] at (6.3,1.2) {$\ell(F_1)=3$\\$\ell(F_0)=3+2=5$\\[5pt]$\ell(F_0)+\ell(F_1)=8=2m$};
+\end{tikzpicture}
+\end{graphillustration}

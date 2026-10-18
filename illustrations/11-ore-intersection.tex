@@ -1,0 +1,20 @@
+\begin{graphillustration}{Пример счёта индексов для короткого доказательства ($n=6$): множества $S,T$ из билета 10 обязаны пересечься. Общий индекс позволяет перестроить путь, как на рис.~\ref{fig:10-hamilton-rewire}.}{fig:11-ore-intersection}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (i1) at (1.4,0) {$1$};
+\node[gi note] at (1.4,0.8) {};
+\node[gi note] at (1.4,-0.8) {$T$};
+\node[gi vertex] (i2) at (2.8,0) {$2$};
+\node[gi note] at (2.8,0.8) {$S$};
+\node[gi note] at (2.8,-0.8) {};
+\node[gi selected] (i3) at (4.199999999999999,0) {$3$};
+\node[gi note] at (4.199999999999999,0.8) {$S$};
+\node[gi note] at (4.199999999999999,-0.8) {$T$};
+\node[gi vertex] (i4) at (5.6,0) {$4$};
+\node[gi note] at (5.6,0.8) {};
+\node[gi note] at (5.6,-0.8) {$T$};
+\node[gi vertex] (i5) at (7.0,0) {$5$};
+\node[gi note] at (7.0,0.8) {$S$};
+\node[gi note] at (7.0,-0.8) {};
+\node[gi note] at (4.2,-1.65) {$|S|+|T|=6>5=n-1\quad\Longrightarrow\quad S\cap T\ne\varnothing$};
+\end{tikzpicture}
+\end{graphillustration}

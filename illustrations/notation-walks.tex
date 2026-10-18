@@ -1,0 +1,40 @@
+\begin{graphillustration}{Примеры записей обхода. В маршруте повторяется ребро $ab$, в цепи повторяется только вершина $a$.}{fig:notation-walks}
+\begin{tikzpicture}[font=\small]
+\begin{scope}[shift={(0,0)}]
+\node[gi vertex] (a) at (0,0) {$a$};
+\node[gi vertex] (b) at (1,1) {$b$};
+\node[gi vertex] (c) at (2,0) {$c$};
+\draw[gi edge] (a) -- (b);
+\draw[gi edge] (b) -- (c);
+\node[gi note] at (1,-1.4) {Маршрут: $a,b,a,b,c$};
+\end{scope}
+\begin{scope}[shift={(6.5,0)}]
+\node[gi vertex] (a) at (0,0) {$a$};
+\node[gi vertex] (b) at (1,1) {$b$};
+\node[gi vertex] (c) at (2,0) {$c$};
+\node[gi vertex] (d) at (1,-0.8) {$d$};
+\draw[gi edge] (a) -- (b);
+\draw[gi edge] (b) -- (c);
+\draw[gi edge] (c) -- (a);
+\draw[gi edge] (a) -- (d);
+\node[gi note] at (1,-1.4) {Цепь: $a,b,c,a,d$};
+\end{scope}
+\begin{scope}[shift={(0,-3)}]
+\node[gi vertex] (a) at (0,0) {$a$};
+\node[gi vertex] (b) at (1,1) {$b$};
+\node[gi vertex] (c) at (2,0) {$c$};
+\draw[gi edge] (a) -- (b);
+\draw[gi edge] (b) -- (c);
+\node[gi note] at (1,-1.4) {Простой путь: $a,b,c$};
+\end{scope}
+\begin{scope}[shift={(6.5,-3)}]
+\node[gi vertex] (a) at (0,0) {$a$};
+\node[gi vertex] (b) at (1,1) {$b$};
+\node[gi vertex] (c) at (2,0) {$c$};
+\draw[gi edge] (a) -- (b);
+\draw[gi edge] (b) -- (c);
+\draw[gi edge] (c) -- (a);
+\node[gi note] at (1,-1.4) {Простой цикл: $a,b,c,a$};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

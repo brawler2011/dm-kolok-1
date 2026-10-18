@@ -1,0 +1,30 @@
+\begin{graphillustration}{Пример конструкции при $h=2,n=7$: $B\cup D$ — клика, $A$ независимо и соединено только с $B$. После удаления $B$ остаются три компоненты.}{fig:10-chvatal-example}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (a1) at (0,1) {$a_1$};
+\node[gi vertex] (a2) at (0,-1) {$a_2$};
+\node[gi vertex] (b1) at (2.2,1) {$b_1$};
+\node[gi vertex] (b2) at (2.2,-1) {$b_2$};
+\node[gi vertex] (d1) at (4,1.3) {$d_1$};
+\node[gi vertex] (d2) at (4.8,0) {$d_2$};
+\node[gi vertex] (d3) at (4,-1.3) {$d_3$};
+\draw[gi edge] (b1) -- (b2);
+\draw[gi edge] (b1) -- (d1);
+\draw[gi edge] (b1) -- (d2);
+\draw[gi edge] (b1) -- (d3);
+\draw[gi edge] (b2) -- (d1);
+\draw[gi edge] (b2) -- (d2);
+\draw[gi edge] (b2) -- (d3);
+\draw[gi edge] (d1) -- (d2);
+\draw[gi edge] (d1) -- (d3);
+\draw[gi edge] (d2) -- (d3);
+\draw[gi edge] (a1) -- (b1);
+\draw[gi edge] (a1) -- (b2);
+\draw[gi edge] (a2) -- (b1);
+\draw[gi edge] (a2) -- (b2);
+\node[gi group,fit=(a1)(a2),label=above:$A$] {};
+\node[gi group,fit=(b1)(b2),label=above:$B$] {};
+\node[gi group,fit=(d1)(d2)(d3),label=above:$D$] {};
+\node[gi note] at (8.2,0.7) {$|A|=|B|=h,\quad |D|=n-2h$\\$d(A)=h,\ d(D)=n-h-1,\ d(B)=n-1$};
+\node[gi note] at (8.2,-0.8) {После удаления $B$:\\$h$ отдельных вершин $A$ и клика $D$.};
+\end{tikzpicture}
+\end{graphillustration}

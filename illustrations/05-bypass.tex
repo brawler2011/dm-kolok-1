@@ -1,0 +1,18 @@
+\begin{graphillustration}{Шаг леммы о двух выходах: обход от $t$ до $y$ избегает $z$. Новые ветви из $t$ идут через $y$ к $s_1$ и через $z$ к $s_2$.}{fig:05-bypass}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (x) at (0,0) {$x$};
+\node[gi vertex] (t) at (1.5,0) {$t$};
+\node[gi selected] (z) at (3,0) {$z$};
+\node[gi vertex] (s1) at (4.8,1.2) {$s1$};
+\node[gi vertex] (s2) at (4.8,-1.2) {$s2$};
+\node[gi vertex] (y) at (3.9,0.6) {$y$};
+\draw[gi edge] (x) -- (t);
+\draw[gi edge] (t) -- (z);
+\draw[gi edge] (z) -- (y);
+\draw[gi edge] (y) -- (s1);
+\draw[gi edge] (z) -- (s2);
+\draw[gi alternate] (t) to[bend left=40] (y);
+\node[gi note] at (2.5,1.9) {Обход в $G-z$};
+\node[gi note] at (2.4,-1.9) {Новая общая ветвь $xt$ короче $xz$};
+\end{tikzpicture}
+\end{graphillustration}

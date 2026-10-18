@@ -1,0 +1,16 @@
+\begin{graphillustration}{Пример порядка жадной раскраски по остову: стрелки указывают от ребёнка к родителю, цифры рядом с вершинами — номера шагов.}{fig:21-greedy-order}
+\begin{tikzpicture}[font=\small]
+\node[gi selected,label=right:{\scriptsize 6}] (r) at (0,2) {$r$};
+\node[gi vertex,label=right:{\scriptsize 4}] (p) at (-1.5,0.8) {$p$};
+\node[gi vertex,label=right:{\scriptsize 5}] (q) at (1.5,0.8) {$q$};
+\node[gi vertex,label=right:{\scriptsize 1}] (x) at (-2.2,-0.7) {$x$};
+\node[gi vertex,label=right:{\scriptsize 2}] (y) at (-0.8,-0.7) {$y$};
+\node[gi vertex,label=right:{\scriptsize 3}] (z) at (1.5,-0.7) {$z$};
+\draw[gi arrow] (x) -- (p);
+\draw[gi arrow] (y) -- (p);
+\draw[gi arrow] (z) -- (q);
+\draw[gi arrow] (p) -- (r);
+\draw[gi arrow] (q) -- (r);
+\node[gi note] at (6,0.9) {Порядок: $x,y,z,p,q,r$\\[5pt]Родитель ещё не окрашен.\\Корень $r$ окрашивается последним, $d_G(r)<d$.};
+\end{tikzpicture}
+\end{graphillustration}

@@ -107,7 +107,30 @@
 \pretocmd{\part}{\newpage}{}{}
 
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,positioning,calc}
+\usetikzlibrary{arrows.meta,positioning,calc,patterns,fit}
+% Общий язык учебных схем; штрихи, двойной контур и метки читаются без цвета.
+\tikzset{
+  gi vertex/.style={circle,draw=black,fill=white,minimum size=5mm,inner sep=1pt},
+  gi small/.style={circle,draw=black,fill=white,minimum size=2.5mm,inner sep=0pt},
+  gi selected/.style={gi vertex,double,fill=black!12},
+  gi edge/.style={draw=black,line width=.65pt},
+  gi emphasis/.style={draw=cbBlue,line width=1.25pt},
+  gi alternate/.style={draw=black,densely dashed,line width=1pt},
+  gi removed/.style={draw=black!55,densely dotted,line width=.85pt},
+  gi arrow/.style={gi edge,-{Stealth[length=2mm]}},
+  gi flow/.style={-{Stealth[length=2mm]},thick},
+  gi group/.style={draw=black!60,dashed,rounded corners,inner sep=6pt},
+  gi note/.style={align=center,font=\small},
+  gi box/.style={draw,rounded corners,align=center,inner sep=5pt,font=\small}
+}
+% Неплавающая композиция: рисунок и подпись переходят на страницу вместе.
+\newenvironment{graphillustration}[2]{%
+  \par\addvspace{6pt}\noindent\begin{minipage}{\linewidth}%
+  \def\gicaption{#1}\def\gilabel{#2}\centering\normalfont\small
+}{%
+  \par\captionof{figure}{\gicaption}\label{\gilabel}%
+  \end{minipage}\par\addvspace{6pt}%
+}
 \DeclareMathOperator{\comp}{c}
 \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\cl}{cl}

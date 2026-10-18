@@ -1,0 +1,14 @@
+\begin{graphillustration}{Пример из текста: многочлен дерева на четырёх вершинах показывает старший коэффициент, число рёбер и число компонент.}{fig:20-coefficients}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (1) at (0,0) {$1$};
+\node[gi vertex] (2) at (1,1) {$2$};
+\node[gi vertex] (3) at (2,0) {$3$};
+\node[gi vertex] (4) at (3,1) {$4$};
+\draw[gi edge] (1) -- (2);
+\draw[gi edge] (2) -- (3);
+\draw[gi edge] (3) -- (4);
+\node[gi note] at (1.5,-0.8) {$n=4,\ m=3,\ c=1$};
+\node[gi note] at (7.4,0.4) {$\chi_G(k)=\underbrace{1}_{b_0}k^4\underbrace{-3}_{-m}k^3+3k^2\underbrace{-1}_{\ne0}k$};
+\node[gi note] at (7.4,-0.9) {Ненулевые степени: $4,3,2,1$; младшая — $c(G)=1$.};
+\end{tikzpicture}
+\end{graphillustration}

@@ -1,0 +1,62 @@
+\begin{graphillustration}{Четыре примера выбора $S\subseteq E(C_4)$. Невыбранные рёбра точечные, компоненты остовного подграфа обведены; каждая компонента даёт один независимый выбор цвета.}{fig:20-inclusion-exclusion}
+\begin{tikzpicture}[font=\small]
+\begin{scope}[shift={(0.0,0)}]
+\node[gi vertex] (1) at (0,1.5) {$1$};
+\node[gi vertex] (2) at (1.5,1.5) {$2$};
+\node[gi vertex] (3) at (1.5,0) {$3$};
+\node[gi vertex] (4) at (0,0) {$4$};
+\draw[gi removed] (1) -- (2);
+\draw[gi removed] (2) -- (3);
+\draw[gi removed] (3) -- (4);
+\draw[gi removed] (4) -- (1);
+\node[gi group,fit=(1)] {};
+\node[gi group,fit=(2)] {};
+\node[gi group,fit=(3)] {};
+\node[gi group,fit=(4)] {};
+\node[gi note] at (0.75,-1) {$|S|=0,\ c(V,S)=4$};
+\node[gi note] at (0.75,-1.6) {Слагаемое: $+k^4$};
+\end{scope}
+\begin{scope}[shift={(3.5,0)}]
+\node[gi vertex] (1) at (0,1.5) {$1$};
+\node[gi vertex] (2) at (1.5,1.5) {$2$};
+\node[gi vertex] (3) at (1.5,0) {$3$};
+\node[gi vertex] (4) at (0,0) {$4$};
+\draw[gi edge] (1) -- (2);
+\draw[gi removed] (2) -- (3);
+\draw[gi removed] (3) -- (4);
+\draw[gi removed] (4) -- (1);
+\node[gi group,fit=(1)(2)] {};
+\node[gi group,fit=(3)] {};
+\node[gi group,fit=(4)] {};
+\node[gi note] at (0.75,-1) {$|S|=1,\ c(V,S)=3$};
+\node[gi note] at (0.75,-1.6) {Слагаемое: $-k^3$};
+\end{scope}
+\begin{scope}[shift={(7.0,0)}]
+\node[gi vertex] (1) at (0,1.5) {$1$};
+\node[gi vertex] (2) at (1.5,1.5) {$2$};
+\node[gi vertex] (3) at (1.5,0) {$3$};
+\node[gi vertex] (4) at (0,0) {$4$};
+\draw[gi edge] (1) -- (2);
+\draw[gi edge] (3) -- (4);
+\draw[gi removed] (2) -- (3);
+\draw[gi removed] (4) -- (1);
+\node[gi group,fit=(1)(2)] {};
+\node[gi group,fit=(3)(4)] {};
+\node[gi note] at (0.75,-1) {$|S|=2,\ c(V,S)=2$};
+\node[gi note] at (0.75,-1.6) {Слагаемое: $+k^2$};
+\end{scope}
+\begin{scope}[shift={(10.5,0)}]
+\node[gi vertex] (1) at (0,1.5) {$1$};
+\node[gi vertex] (2) at (1.5,1.5) {$2$};
+\node[gi vertex] (3) at (1.5,0) {$3$};
+\node[gi vertex] (4) at (0,0) {$4$};
+\draw[gi edge] (1) -- (2);
+\draw[gi edge] (2) -- (3);
+\draw[gi edge] (3) -- (4);
+\draw[gi removed] (4) -- (1);
+\node[gi group,fit=(1)(2)(3)(4)] {};
+\node[gi note] at (0.75,-1) {$|S|=3,\ c(V,S)=1$};
+\node[gi note] at (0.75,-1.6) {Слагаемое: $-k^1$};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

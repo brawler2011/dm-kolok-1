@@ -1,0 +1,19 @@
+\begin{graphillustration}{Схема определения: два пути без общих вершин соединяют концы выделенных рёбер $ab,cd$.}{fig:05-disjoint}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (a) at (0,1) {$a$};
+\node[gi vertex] (b) at (0,-1) {$b$};
+\node[gi vertex] (c) at (4,1) {$c$};
+\node[gi vertex] (d) at (4,-1) {$d$};
+\node[gi vertex] (p) at (2,1) {$p$};
+\node[gi vertex] (q) at (2,-1) {$q$};
+\draw[gi emphasis] (a) -- (b);
+\draw[gi emphasis] (c) -- (d);
+\draw[gi alternate] (a) -- (p);
+\draw[gi alternate] (p) -- (c);
+\draw[gi edge] (b) -- (q);
+\draw[gi edge] (q) -- (d);
+\node[gi note] at (2,1.7) {$P:a\leadsto c$};
+\node[gi note] at (2,-1.7) {$Q:b\leadsto d$};
+\node[gi note,align=left] at (7,0) {Удаляем $ab$ и $cd$ из цикла:\\$V(P)\cap V(Q)=\varnothing$.};
+\end{tikzpicture}
+\end{graphillustration}
